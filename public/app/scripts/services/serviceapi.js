@@ -141,4 +141,18 @@ angular.module('choiceHelperApp')
             query.params = params;
             this.requestApi(query, callback);
         };
+
+
+        /**
+         *
+         *
+         */
+
+        this.saveCollection = function(params, callback) {
+            var query = {};
+            query.module = 'collections';
+            query.action = 'save';
+            query.params = params;
+            this.requestApi(query, callback);
+        };
 	});

@@ -11,9 +11,12 @@
                     <div class="col-md-5">
 
                         Proposition A
-                        {{proposition.img}}
 
-                        <img src="..." alt="..." class="img-thumbnail">
+                        <img
+                            src="../../gallery/{{propositions.itemA.title}}"
+                            alt="..."
+                            class="img-thumbnail"
+                            ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemA.id)" />
 
                     </div>
 
@@ -25,7 +28,11 @@
 
                         Proposition B
 
-                        <img src="..." alt="..." class="img-thumbnail">
+                        <img
+                            src="../../gallery/{{propositions.itemB.title}}"
+                            alt="..."
+                            class="img-thumbnail"
+                            ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemB.id)" />
 
                     </div>
                 </div>

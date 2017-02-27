@@ -8,7 +8,8 @@
  * Service in the choiceHelperApp.
  */
 angular.module('choiceHelperApp')
-	.service('serviceapi', function () {
+
+	.service('serviceApi', function () {
 		// AngularJS will instantiate a singleton by calling "new" on this function
 		//this.apiPath = "http://localhost/realtimejobbing/server/index.php";
 		this.apiPath = "../../index.php";
@@ -26,7 +27,7 @@ angular.module('choiceHelperApp')
 			}
 
 			query.token = this.token;
-			
+
 			$.ajax({
 				url: this.apiPath,
 				type:"POST",
@@ -38,7 +39,7 @@ angular.module('choiceHelperApp')
 						sessionStorage.token = angular.toJson(data.token);
 					}
 					parent.token = data.token;
-					return callback(data);		 	
+					return callback(data);
 				}
 			});
 		};
@@ -46,17 +47,33 @@ angular.module('choiceHelperApp')
 
 	   	/**
 		 *	Methode qui charge la liste des responses
-		 *	
+		 *
 		 */
-	
-		this.loadUserAnswers = function(callback) {
+
+		this.getGameItems = function(callback) {
 			var query = {};
-			query.module = 'offers';
-			query.action = 'getmines';
+			query.module = 'game';
+			query.action = 'getitems';
 			var params = {};
 			params.refused = true;
 			query.params = params;
 			this.requestApi(query, callback);
-		};	
+		};
+
+	   	/**
+		 *	Methode qui charge la liste des responses
+		 *
+		 */
+
+		this.playGameIteration = function(params, callback) {
+			var query = {};
+			query.module = 'game';
+			query.action = 'play';
+            query.params = {};
+			query.params.a = params.a;
+			query.params.b = params.b;
+			query.params.v = params.v;
+			this.requestApi(query, callback);
+		};
 
 	});

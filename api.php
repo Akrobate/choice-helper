@@ -32,7 +32,7 @@ define('DIR_TPL', PROJ_PATH . 'templates/');
 define('DIR_LIBS', PROJ_PATH. 'libs/');
 
 // Inclusion des fichiers libs
-require_once(PATH_CONFIGS . "conf.php");
+require_once(PATH_CONFIGS . "config.php");
 
 require_once(PATH_LIBS . "sourceslist.php");
 require_once(PATH_LIBS . "game.class.php");

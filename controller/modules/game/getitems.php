@@ -24,6 +24,13 @@ class Modules_Game_Getitems extends CoreController {
         $elemA = $game->getRandItem();
         $elemB = $game->getRandItem();
 
+        // Force elementB to be different of elementA
+        $force_exit_after = 1000;
+        while (($elemB['id'] == $elemA['id']) && ($force_exit_after > 0)) {
+            $elemB = $game->getRandItem();
+            $force_exit_after--;
+        }
+
 		$this->assign('itemA', $elemA);
 		$this->assign('itemB', $elemB);
 

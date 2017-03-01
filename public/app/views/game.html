@@ -1,23 +1,19 @@
 <p>Classification</p>
 
 <div class="row">
+
     <div class="col-md-8">
         <!-- Game -->
-
         <div class="jumbotron">
             <div class="container">
-
                 <div class="row">
                     <div class="col-md-5">
-
                         Proposition A
-
                         <img
                             src="../../gallery/{{propositions.itemA.title}}"
                             alt="..."
                             class="img-thumbnail"
                             ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemA.id)" />
-
                     </div>
 
                     <div class="col-md-2">
@@ -25,23 +21,37 @@
                     </div>
 
                     <div class="col-md-5">
-
                         Proposition B
-
                         <img
                             src="../../gallery/{{propositions.itemB.title}}"
                             alt="..."
                             class="img-thumbnail"
                             ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemB.id)" />
-
                     </div>
                 </div>
-
             </div>
         </div>
+    </div>
 
-    </div>
+
     <div class="col-md-4">
-        Secondary column
+        <ul class="list-group" ng-repeat="result in gameResults | orderBy: gameResultsSort">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img
+                            src="../../gallery/{{result.title}}"
+                            alt="..."
+                            class="img-thumbnail"
+                            ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemB.id)" />
+                    </div>
+                    <div class="col-md-7">
+                        <h4>{{result.title}}</h4>
+                        <span class="badge">{{result.rank}}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
+
 </div>

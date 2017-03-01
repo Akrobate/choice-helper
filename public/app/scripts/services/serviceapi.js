@@ -76,4 +76,16 @@ angular.module('choiceHelperApp')
 			this.requestApi(query, callback);
 		};
 
+        /**
+		 *
+		 *
+		 */
+
+		this.getGameResults = function(params, callback) {
+			var query = {};
+			query.module = 'game';
+			query.action = 'getresults';
+            query.params = {};
+			this.requestApi(query, callback);
+		};
 	});

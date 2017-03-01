@@ -13,7 +13,7 @@
 class Modules_Game_Getresults extends CoreController {
 
 
-	/** 
+	/**
 	 *	@brief	Méthode init qui recupere la liste de resultats
 	 *	@details	Affiche la liste de contenus
 	 *
@@ -33,9 +33,7 @@ class Modules_Game_Getresults extends CoreController {
 			$data[$i]['url'] = $tmp[1];
 			$i++;
 		}
-
 		$this->assign('items', $data);
-		
 	}
 
 }

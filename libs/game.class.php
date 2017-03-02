@@ -11,18 +11,7 @@ class game {
 		$src->createImageCollectionFromSources();
 		$collection = $src->getCollection();
 
-		//$collection
-		/*
-		CREATE TABLE `items` (
-		  `id` bigint(24) unsigned NOT NULL AUTO_INCREMENT,
-		  `title` varchar(255) NOT NULL,
-		  `value` text NOT NULL,
-		  `created` datetime NOT NULL,
-		  `updated` datetime NOT NULL,
-		  `rank` float(10,5) NOT NULL,
-		  PRIMARY KEY (`id`)
-		) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
-		*/
+
 
 		$inserts = "";
 		foreach($collection as $item) {

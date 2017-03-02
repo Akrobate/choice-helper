@@ -1,0 +1,17 @@
+<ul class="list-group" >
+    <li class="list-group-item" ng-repeat="result in gameResults | orderBy: gameResultsSort">
+        <div class="row">
+            <div class="col-md-5">
+                <img
+                    src="../../gallery/{{result.title}}"
+                    alt="..."
+                    class="img-thumbnail"
+                    />
+            </div>
+            <div class="col-md-7">
+                <h4>{{result.title}}</h4>
+                <span class="badge">{{result.rank}}</span>
+            </div>
+        </div>
+    </li>
+</ul>

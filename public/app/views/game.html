@@ -8,7 +8,12 @@
 
         <div class="panel panel-default">
           <div class="panel-body">
-            
+
+                <p class="text-right">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                    </button>
+                </p>
                 <div class="row">
                     <div class="col-md-5">
                         <!-- Proposition A -->
@@ -38,23 +43,42 @@
 
 
     <div class="col-md-4">
-        <ul class="list-group" ng-repeat="result in gameResults | orderBy: gameResultsSort">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img
-                            src="../../gallery/{{result.title}}"
-                            alt="..."
-                            class="img-thumbnail"
-                            ng-click="playIteration(propositions.itemA.id, propositions.itemB.id, propositions.itemB.id)" />
+
+        <div class="text-right">
+            <div class="btn-group text-right" role="group" aria-label="">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+<!-- glyphicon glyphicon-resize-small -->
+        <div class="top20">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="result in gameResults | orderBy: gameResultsSort">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img
+                                src="../../gallery/{{result.title}}"
+                                alt="..."
+                                class="img-thumbnail"
+                                />
+                        </div>
+                        <div class="col-md-7">
+                            <h4>{{result.title}}</h4>
+                            <span class="badge">{{result.rank}}</span>
+                        </div>
                     </div>
-                    <div class="col-md-7">
-                        <h4>{{result.title}}</h4>
-                        <span class="badge">{{result.rank}}</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
 </div>

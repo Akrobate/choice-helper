@@ -7,6 +7,12 @@
 
 class ApplicationSetup {
 
+	/**
+	 *	Method returns query to create Items table
+	 *	An item is an entity belonging to collection
+	 *	An item is the ranked element during a game
+	 */
+
 	public static function queryCreateItemsTable() {
 		$query = '
 			CREATE TABLE `items` (
@@ -23,6 +29,12 @@ class ApplicationSetup {
     }
 
 
+	/**
+	 *	Method returns query to create Collections table
+	 *	A collection is a set of Items
+	 *	A collection define the set of items to be rankend
+	 */
+
     public static function queryCreateCollectionsTable() {
 		$query = '
 		    CREATE TABLE IF NOT EXISTS `collections` (
@@ -37,6 +49,10 @@ class ApplicationSetup {
 		return $query;
     }
 
+
+	/**
+	 *	Method returns query to create Users table
+	 */
 
     public static function queryCreateUsersTable() {
 		$query = '

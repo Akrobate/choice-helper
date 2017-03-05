@@ -23,7 +23,7 @@ class Modules_Game_Getresults extends CoreController {
 		$items = array();
 
 		sql::query("SELECT * FROM items WHERE 1 ORDER BY rank DESC LIMIT 100");
-		$data = sql::OLDfetchArray();
+		$data = sql::allFetchAssoc();
 
 		$i=0;
 		while (isset($data[$i])) {

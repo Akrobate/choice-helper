@@ -12,7 +12,7 @@ angular.module('choiceHelperApp')
 	.service('serviceApi', function () {
 		// AngularJS will instantiate a singleton by calling "new" on this function
 		//this.apiPath = "http://localhost/realtimejobbing/server/index.php";
-		this.apiPath = "../../index.php";
+		this.apiPath = "../../server/index.php";
 		this.token = null;
 
 		this.requestApi = function(query, callback) {

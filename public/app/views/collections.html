@@ -1,0 +1,39 @@
+<p class="lead">Your collections</p>
+
+<form role="form" ng-submit="editProfile()">
+    <p ng-show="showSuccessAlert" class="alert alert-success">Profil bien enregistré</p>
+    <p ng-show="showWarnAlert" class="alert alert-warning">Problème d'enregistrement</p>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Prenom</label>
+        <input ng-model="profile.firstname" type="text" name="firstname" class="form-control" ng-required="true" placeholder="Prenom">
+    </div>
+
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
+
+<div class="row" custom-full-height="true">
+	<div class="col-sm-12">
+		<div class="list-group">
+			<div ng-repeat="collection in collections" class="list-group-item">
+
+				<div class="list-group-item-text">
+					<div class="row">
+						<div class="col-sm-6">
+							<h4 class="list-group-item-heading">{{collection.label}}</h4>
+						</div>
+						<div class="col-sm-6">
+							<button class="btn btn-primary" class="btn" ng-click="publicPing(collection.id)">
+								PublicPing
+							</button>
+
+							<a class="btn btn-success" class="btn" ng-href="#/events/{{collection.id}}">
+								Voir les évenements
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

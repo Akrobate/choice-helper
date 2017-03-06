@@ -33,5 +33,11 @@ VALUES
 (1,'granted', 'testitem', 'save', NOW()),
 (1,'granted', 'testitem', 'index', NOW()),
 (1,'granted', 'testitem', 'delete', NOW()),
-(1,'granted', 'testitem', 'view', NOW())
+(1,'granted', 'testitem', 'view', NOW()),
+
+(1,'granted', 'collections', 'save', NOW()),
+(1,'granted', 'collections', 'index', NOW()),
+(1,'granted', 'collections', 'delete', NOW()),
+(1,'granted', 'collections', 'view', NOW())
+
 ;

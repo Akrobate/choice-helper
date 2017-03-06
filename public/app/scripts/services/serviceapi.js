@@ -45,6 +45,45 @@ angular.module('choiceHelperApp')
 		};
 
 
+        this.connect = function(login, password, callback) {
+
+    		var query = {};
+    		query.module = 'users';
+    		query.action = 'login';
+
+    		var params = {};
+    		params.login = login;
+    		params.password = password;
+    		query.params = params;
+    		this.requestApi(query, callback);
+    	};
+
+
+        /**
+    	 *	Method to logout
+    	 *  Destroys the token
+    	 */
+
+    	this.logout = function(callback) {
+    		var query = {};
+    		query.module = 'users';
+    		query.action = 'logout';
+    		this.requestApi(query, callback);
+    	};
+
+
+        /**
+    	 *	Method to check that the collection is still on
+    	 *
+    	 */
+
+    	this.checkConnection = function(callback) {
+    		var query = {};
+    		query.module = 'users';
+    		query.action = 'access';
+    		this.requestApi(query, callback);
+    	};
+
 	   	/**
 		 *	Methode qui charge la liste des responses
 		 *
@@ -88,4 +127,18 @@ angular.module('choiceHelperApp')
             query.params = {};
 			this.requestApi(query, callback);
 		};
+
+
+        /**
+         *
+         *
+         */
+
+        this.getCollections = function(params, callback) {
+            var query = {};
+            query.module = 'collections';
+            query.action = 'index';
+            query.params = params;
+            this.requestApi(query, callback);
+        };
 	});
